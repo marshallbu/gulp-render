@@ -68,7 +68,7 @@ module.exports = function (options) {
         if (filename.indexOf('node_modules') === -1) {
             src = fs.readFileSync(filename, {encoding: 'utf8'});
             src = babel.transform(src, babelOptions);
-            module._compile(src, filename);
+            module._compile(src.code, filename);
         } else {
             originalJsTransform(module, filename);
         }
