@@ -49,7 +49,7 @@ function renderToStaticMarkup(page) {
 }
 
 // Plugin level function (dealing with files)
-function Plugin(options) {
+module.exports = function (options) {
     var babelOptions,
         originalJsTransform;
 
@@ -140,6 +140,4 @@ function Plugin(options) {
 
     // Return the file stream
     return stream;
-}
-
-module.exports = Plugin;
+};
